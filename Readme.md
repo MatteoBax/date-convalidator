@@ -16,3 +16,9 @@ if(convalidate.checkDate(date)){
     console.log('wrong date');
 }
 ```
+
+## Installation
+
+```
+npm i @matteobax/date-convalidator
+```
