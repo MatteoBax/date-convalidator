@@ -1,0 +1,19 @@
+{
+  "name": "@matteobax/date-convalidator",
+  "version": "1.0.0",
+  "description": "Check the validity of the date",
+  "main": "date.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatteoBax/date-convalidator.git"
+  },
+  "author": "matteobax",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatteoBax/date-convalidator/issues"
+  },
+  "homepage": "https://github.com/MatteoBax/date-convalidator#readme"
+}
