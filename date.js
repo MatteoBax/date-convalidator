@@ -1,7 +1,7 @@
-var bisestile = false;
-var gmax = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let bisestile = false;
+let gmax = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 function controlloBisestile(anno){
-    var x = anno%100;
+    let x = anno%100;
     if((anno%4)==0 & x!=0){
         bisestile = true;
     }else{
@@ -13,11 +13,47 @@ function controlloBisestile(anno){
     } 
 }
 
-exports.checkDate = function(date) {
-    var splitted = date.split("/");
-    var gg = splitted[0];
-    var mm = splitted[1];
-    var yyyy = splitted[2]
+exports.checkDate = function(date,format) {
+    if (!date) {
+        console.log("Date is required!");
+        return -2;
+    }
+    if (!format){
+        console.log("Format of date is required!");
+        return -2;
+    }
+    let splitted = "";
+    if (date.includes("/")) {
+        splitted = date.split("/");
+    } else if (date.includes("-")) {
+        splitted = date.split("-");
+    } else if (date.includes(".")) {
+        splitted = date.split(".");
+    } else {
+        console.log("Invalid string separator!\nUse / or - or .")
+        return -3;
+    }
+    
+    let gg = "";
+    let mm = "";
+    let yyyy = "";
+    if(format.toLowerCase()=="dd/mm/yyyy") {
+        gg = splitted[0];
+        mm = splitted[1];
+        yyyy = splitted[2];
+    } else if (format.toLowerCase()=="yyyy/mm/dd") {
+        gg = splitted[2];
+        mm = splitted[1];
+        yyyy = splitted[0];
+    } else if (format.toLowerCase()=="mm/dd/yyyy") {
+        gg = splitted[1];
+        mm = splitted[0];
+        yyyy = splitted[2];
+    } else {
+        console.log("Wrong date format!\nAllowed formats are (dd/mm/yyyy , yyyy/mm/dd , mm/dd/yyyy) ");
+        return -3;
+    }
+    
     controlloBisestile(yyyy);
     if(bisestile){
         gmax[1] = 29;
@@ -31,15 +67,19 @@ exports.checkDate = function(date) {
             //Controllo validità anni
             if(yyyy>=0 & yyyy.length == 4){
                 if(splitted.length==3){
-                    return true;
-                }  
+                    return 0;
+                } else{
+                    return -1;
+                }
+            }else{
+                return -1;
             }
         }else{
-            return false;
+            return -1;
         }
     }
     else{
-        return false;
+        return -1;
     }
 
 }
