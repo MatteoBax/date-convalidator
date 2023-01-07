@@ -10,8 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/MatteoBax/date-convalidator.git"
   },
+  "keywords":[
+    "date",
+    "check date"
+  ],
   "author": "matteobax",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/MatteoBax/date-convalidator/issues"
   },
