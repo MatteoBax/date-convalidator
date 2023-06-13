@@ -1,0 +1,24 @@
+version: "1.0"
+linter: jetbrains/qodana-js:2023.1-eap
+include:
+  - name: DebuggerStatementJS
+  - name: CallerJS
+  - name: BlockStatementJS
+  - name: NestedFunctionJS
+  - name: DynamicallyGeneratedCodeJS
+  - name: ConfusingPlusesOrMinusesJS
+  - name: JSUrlImportUsage
+  - name: NpmUsedModulesInstalled
+  - name: JSUnresolvedReference
+  - name: JSNonStrictModeUsed
+  - name: JSXSyntaxUsed
+  - name: JSAnnotator
+  - name: FlowJSConfig
+  - name: FlowJSCoverage
+  - name: JSStringConcatenationToES6Template
+  - name: ES6ConvertIndexedForToForOf
+  - name: JSFunctionExpressionToArrowFunction
+  - name: ES6ConvertToForOf
+  - name: TailRecursionJS
+  - name: UnterminatedStatementJS
+  - name: StandardJS
