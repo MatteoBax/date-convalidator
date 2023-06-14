@@ -2,7 +2,7 @@ let bisestile = false;
 let gmax = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 function controlloBisestile(anno){
     let x = anno%100;
-    if((anno%4)==0 & x!=0){
+    if((anno%4)==0 && x!=0){
         bisestile = true;
     }else{
         if((anno%400)==0){
@@ -63,10 +63,10 @@ exports.checkDate = function(date,format) {
     //Controllo validità giorni
     if(gg <= gmax[mm-1]){
         //Controllo validità mesi
-        if(mm>=1 & mm<=12 & mm.length == 2){
+        if(mm>=1 & mm<=12 && mm.length == 2){
             //Controllo validità anni
-            if(yyyy>=0 & yyyy.length == 4){
-                if(splitted.length==3){
+            if(yyyy>=0 && yyyy.length == 4){
+                if(splitted.length == 3){
                     return 0;
                 } else{
                     return -1;
